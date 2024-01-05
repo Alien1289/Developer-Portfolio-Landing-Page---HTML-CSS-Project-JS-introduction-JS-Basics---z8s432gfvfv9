@@ -41,7 +41,7 @@ document.getElementsByClassName('about-me-info-list-item-skills')[0].addEventLis
     document.getElementsByClassName('about-me-info-list-item-experience')[0].classList.remove('about-me-info-list-item-active')
     document.getElementsByClassName('about-me-info-list-item-education')[0].classList.remove('about-me-info-list-item-active')
     document.getElementById('about-me-info-dynamic-content').innerHTML =
-    "<span>Computer Languages:</span><ul><li>HTML</li><li>CSS</li><li>JAVASCRIPT</li><li>JAVA</li><li>PYTHON</li></ul><span>Software Packages</span><ul><li>Bootstrap</li><li>React.js</li></ul>"
+        "<span>Computer Languages:</span><ul><li>HTML</li><li>CSS</li><li>JAVASCRIPT</li><li>JAVA</li><li>PYTHON</li></ul><span>Software Packages</span><ul><li>Bootstrap</li><li>React.js</li></ul>"
 })
 
 document.getElementsByClassName('about-me-info-list-item-experience')[0].addEventListener('click', function () {
@@ -60,21 +60,92 @@ document.getElementsByClassName('about-me-info-list-item-education')[0].addEvent
 
 
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycby0wOpWkFonZTYmHNlRu5rz-k0G4r8zXfjdj9WA-Q6F18gy3TkXlmsksTONjrM13OiT5g/exec'
-  const form = document.forms['submit-to-google-sheet']
-  const msg = document.getElementById('msg')
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {msg.innerHTML = "Message sent successfully"
-      setTimeout(function(){
-        msg.innerHTML = ""
-      }, 5000)
-      form.reset()
+for (let ind = 0; ind < document.getElementsByClassName('my-projects-items').length; ind++) {
+    projectOverlayAnimation(document.getElementsByClassName('my-projects-items')[ind], document.getElementsByClassName('my-projects-items')[ind].children[1])
+}
+
+function projectOverlayAnimation(element, overlayElement) {
+    let top = 451;
+    let topDecreaseInterval;
+    let topIncreaseInterval;
+
+    element.addEventListener('mouseenter', function () {
+        if (top === 451) {
+            top = 450;
+            topDecreaseInterval = setInterval(function () {
+                console.log(top)
+                overlayElement.style['top'] = `${top}px`
+                if (top === 150) {
+                    clearInterval(topDecreaseInterval)
+                } else{
+                    top -= 50
+                }
+            }, 3)
+        }
     })
-      .catch(error => console.error('Error!', error.message))
-  })
+
+    element.addEventListener('mouseleave', function () {
+        if (top === 150) {
+            topIncreaseInterval = setInterval(function () {
+                console.log(top)
+                overlayElement.style['top'] = `${top}px`
+                if (top === 450) {
+                    clearInterval(topIncreaseInterval)
+                    top = 451
+                } else {
+                    top += 50
+                }
+            }, 3)
+        }
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycby0wOpWkFonZTYmHNlRu5rz-k0G4r8zXfjdj9WA-Q6F18gy3TkXlmsksTONjrM13OiT5g/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById('msg')
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function () {
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+})
 
 
 

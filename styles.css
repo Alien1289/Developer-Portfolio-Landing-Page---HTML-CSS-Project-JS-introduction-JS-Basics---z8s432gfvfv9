@@ -114,7 +114,7 @@ nav{
     height: 607px;
     /* border: 1px solid red; */
     position: fixed;
-    top: 100px;
+    bottom: 0;
     left: 10%;
     z-index: -1;
     opacity: 0.8;
@@ -240,7 +240,7 @@ nav{
 
 #my-projects{
     width: 100%;
-    height: 750px;
+    height: 800px;
     padding-left: 10%;
     padding-right: 10%;
     background-color: black;
@@ -258,9 +258,9 @@ nav{
 
 .my-projects-items{
     width: 350px;
-    height: 350px;
+    height: 450px;
     text-align: justify;
-    transition: 0.5s background-color ease-in, 0.6s bottom ease-in;
+    /* transition: 0.5s background-color ease-in, 0.6s bottom ease-in; */
     box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
     cursor: pointer;
     color: white;
@@ -277,28 +277,33 @@ nav{
 }
 .my-projects-items-overlay-txt{
     width: 350px;
-    height: 350px;
-    color: #00FF7F;
-    background-color: black;
+    height: 450px;
+    background-color: #00FF7F;
+    /* background-color: pink; */
+    color: black;
     padding: 15px 20px;
-    opacity: 0.9;
+    opacity: 1;
     text-align: center;
-    font-size: 2.5rem;
-    transition: 0.5s opacity ease-in;
+    font-size: 2rem;
+    transition: 3ms top ease-in;
     letter-spacing: 3px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute; 
+    top: 450px;
+    font-family: monospace, sans-serif;
 }
+.my-projects-items-overlay-txt p{
+    font-size: 1rem;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-family: monospace, sans-serif;
 
-.my-projects-items:hover .my-projects-items-overlay-txt{
-    position: absolute;
-    top: 0px;    
 }
 
 
 /* footer-preparation */
 #footer{
     width: 100%;
-    height: 600px;
+    height: 500px;
     background-color: black;
     color: white;
     padding-left: 10%;
@@ -309,17 +314,19 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 0;
 }
 
 #footer-ul{
     height: 100%;
     width: 500px;
-    background-color: black;
+    background-color:black;
     margin-top: 0;
     list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    margin-bottom: 0;
 }
 
 #footer-ul-heading{
@@ -332,13 +339,21 @@ nav{
     display: flex;
     gap: 30px;
     font-size: 2rem;
+    cursor: pointer;
+
+}
+#footer-ul-icons a{
+    color: white;
+}
+#footer-ul-icons a:hover{
+    color: #00FF7F;
 }
 
 #footer-cv-download{
     width: 100px;
     height: 40px;
     /* border: none; */
-    color: white;
+    color: black;
     padding: 2px 4px;
     font-weight: 800;
     cursor: pointer;
@@ -367,6 +382,7 @@ nav{
 }
 #footer-form-comment{
     height: 100px;
+    padding: 20px 10px;
 }
 
 #footer-form-name, #footer-form-mail{
@@ -381,7 +397,7 @@ nav{
     width: 100px;
     height: 40px;
     /* border: none; */
-    color: white;
+    color: black;
     padding: 2px 4px;
     font-weight: 800;
     cursor: pointer;
@@ -398,4 +414,7 @@ nav{
     height: 3px;
     border: none;
     border-radius: 30px;
+}
+#msg{
+    color: #00FF7F;
 }
