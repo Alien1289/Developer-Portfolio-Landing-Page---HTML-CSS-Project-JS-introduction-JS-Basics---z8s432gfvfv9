@@ -426,7 +426,8 @@ nav {
 }
 
 #footer-ul-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    white-space: nowrap;
 }
 
 
@@ -627,7 +628,7 @@ nav {
 
 @media (max-width:990px) {
     #about-me {
-        padding-top: 100px;
+        padding-top: 80px;
         flex-direction: column-reverse;
         height: fit-content;
         gap: 50px;
