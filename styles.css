@@ -657,7 +657,9 @@ nav {
     #about-me-img-container {
         width: 270px;
         height: 270px;
-        margin-top: 80px;
+    }
+    #about-me{
+        padding-top: 100px;
     }
 }
 

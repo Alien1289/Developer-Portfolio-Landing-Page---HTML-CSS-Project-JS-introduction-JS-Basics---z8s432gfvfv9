@@ -237,7 +237,9 @@ document.addEventListener('scroll', function() {
 
 
 
-
+function reloader(){
+    document.getElementById('reloader'),setAttribute('href', window.viewportWidth)
+}
 
 
 
