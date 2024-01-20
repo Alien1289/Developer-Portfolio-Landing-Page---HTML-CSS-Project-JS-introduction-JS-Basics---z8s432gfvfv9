@@ -106,47 +106,47 @@ function projectOverlayAnimation(element, overlayElement) {
             }
 
         })
-    }else{
+    } else {
         overlayElement.style['top'] = `150px`
     }
 
 }
 
-if(Number(viewportWidth) >= 640){
-    document.getElementsByClassName('ftr-btns')[0].addEventListener('mouseenter', function(){
+if (Number(viewportWidth) >= 640) {
+    document.getElementsByClassName('ftr-btns')[0].addEventListener('mouseenter', function () {
         document.getElementsByClassName('ftr-btns')[0].style['background-color'] = 'white'
     })
-    document.getElementsByClassName('ftr-btns')[0].addEventListener('mousedown', function(){
+    document.getElementsByClassName('ftr-btns')[0].addEventListener('mousedown', function () {
         document.getElementsByClassName('ftr-btns')[0].style['background-color'] = '#00FF7F'
-        setTimeout(function(){
-        document.getElementsByClassName('ftr-btns')[0].style['background-color'] = 'white'
+        setTimeout(function () {
+            document.getElementsByClassName('ftr-btns')[0].style['background-color'] = 'white'
         }, 200)
-        
+
     })
-    document.getElementsByClassName('ftr-btns')[0].addEventListener('mouseleave', function(){
+    document.getElementsByClassName('ftr-btns')[0].addEventListener('mouseleave', function () {
         document.getElementsByClassName('ftr-btns')[0].style['background-color'] = '#00FF7F'
     })
 
-    document.getElementsByClassName('ftr-btns')[1].addEventListener('mouseenter', function(){
+    document.getElementsByClassName('ftr-btns')[1].addEventListener('mouseenter', function () {
         document.getElementsByClassName('ftr-btns')[1].style['background-color'] = 'white'
     })
-    document.getElementsByClassName('ftr-btns')[1].addEventListener('mousedown', function(){
+    document.getElementsByClassName('ftr-btns')[1].addEventListener('mousedown', function () {
         document.getElementsByClassName('ftr-btns')[1].style['background-color'] = '#00FF7F'
-        setTimeout(function(){
-        document.getElementsByClassName('ftr-btns')[1].style['background-color'] = 'white'
+        setTimeout(function () {
+            document.getElementsByClassName('ftr-btns')[1].style['background-color'] = 'white'
         }, 200)
-        
+
     })
-    document.getElementsByClassName('ftr-btns')[1].addEventListener('mouseleave', function(){
+    document.getElementsByClassName('ftr-btns')[1].addEventListener('mouseleave', function () {
         document.getElementsByClassName('ftr-btns')[1].style['background-color'] = '#00FF7F'
     })
-}else{
-    document.getElementsByClassName('ftr-btns')[0].addEventListener('mousedown', function(){
+} else {
+    document.getElementsByClassName('ftr-btns')[0].addEventListener('mousedown', function () {
         document.getElementsByClassName('ftr-btns')[0].style['background-color'] = 'white'
-        setTimeout(function(){
+        setTimeout(function () {
             document.getElementsByClassName('ftr-btns')[0].style['background-color'] = '#00FF7F'
         }, 200)
-        
+
     })
 }
 
@@ -154,7 +154,7 @@ let leftHamburger = 120;
 let hamburgerStartInterval;
 let hamburgerEndInterval;
 
-document.getElementById('nav-hamburger').addEventListener('mousedown', function(){
+document.getElementById('nav-hamburger').addEventListener('mousedown', function () {
     clearInterval(hamburgerEndInterval)
     clearInterval(hamburgerStartInterval)
     document.getElementById('nav-hamburger').style['color'] = 'white'
@@ -166,9 +166,9 @@ document.getElementById('nav-hamburger').addEventListener('mousedown', function(
     document.getElementById('hamburger-menu').style['display'] = ['block']
 
     hamburgerStartInterval = setInterval(() => {
-        if (leftHamburger === 0){
+        if (leftHamburger === 0) {
             clearInterval(hamburgerStartInterval)
-        }else{
+        } else {
             leftHamburger -= 20
             document.getElementById('hamburger-menu').style['left'] = `${leftHamburger}vw`
         }
@@ -176,7 +176,7 @@ document.getElementById('nav-hamburger').addEventListener('mousedown', function(
 })
 
 
-document.getElementById('hamburger-menu-btn').addEventListener('mousedown', function(){
+document.getElementById('hamburger-menu-btn').addEventListener('mousedown', function () {
     clearInterval(hamburgerStartInterval)
     clearInterval(hamburgerEndInterval)
     document.getElementById('hamburger-menu-btn').style['color'] = 'black'
@@ -188,24 +188,24 @@ document.getElementById('hamburger-menu-btn').addEventListener('mousedown', func
     }, 200);
 
     hamburgerEndInterval = setInterval(() => {
-        if (leftHamburger === 120){
+        if (leftHamburger === 120) {
             clearInterval(hamburgerStartInterval)
             document.getElementById('hamburger-menu').style['display'] = ['none']
-        }else{
+        } else {
             leftHamburger += 20
             document.getElementById('hamburger-menu').style['left'] = `${leftHamburger}vw`
         }
     }, 60);
 })
 
-function hamCloser(){
+function hamCloser() {
     clearInterval(hamburgerStartInterval)
     clearInterval(hamburgerEndInterval)
     hamburgerEndInterval = setInterval(() => {
-        if (leftHamburger === 120){
+        if (leftHamburger === 120) {
             clearInterval(hamburgerStartInterval)
             document.getElementById('hamburger-menu').style['display'] = ['none']
-        }else{
+        } else {
             leftHamburger += 20
             document.getElementById('hamburger-menu').style['left'] = `${leftHamburger}vw`
         }
@@ -214,7 +214,7 @@ function hamCloser(){
 
 
 
-document.addEventListener('scroll', function() {
+document.addEventListener('scroll', function () {
     const scrollTop = window.scrollY;
 
     const overlay = document.getElementById('section-hero-container');
@@ -237,8 +237,8 @@ document.addEventListener('scroll', function() {
 
 
 
-function reloader(){
-    document.getElementById('reloader'),setAttribute('href', window.viewportWidth)
+function reloader() {
+    document.getElementById('reloader'), setAttribute('href', window.viewportWidth)
 }
 
 

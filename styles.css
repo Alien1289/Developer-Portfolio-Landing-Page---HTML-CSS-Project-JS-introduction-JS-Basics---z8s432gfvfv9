@@ -25,7 +25,7 @@ body {
 }
 
 
-#nav-logo a{
+#nav-logo a {
     text-decoration: none;
     color: white;
 }
@@ -33,6 +33,7 @@ body {
 #nav-logo-first-letter {
     color: #00FF7F;
 }
+
 .nav-ul-li-anchor {
     text-decoration: none;
     color: white;
@@ -526,7 +527,7 @@ nav {
 }
 
 
-#hamburger-menu{
+#hamburger-menu {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -544,17 +545,20 @@ nav {
     padding-bottom: 50px;
     transition: 60ms left ease-in;
 }
-#hamburger-menu ul{
+
+#hamburger-menu ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
-#hamburger-menu ul a{
+
+#hamburger-menu ul a {
     font-size: 1.5rem;
     color: black;
 }
-#hamburger-menu-btn{
+
+#hamburger-menu-btn {
     margin-left: auto;
     background-color: red;
     width: fit-content;
@@ -659,7 +663,8 @@ nav {
         width: 270px;
         height: 270px;
     }
-    #about-me{
+
+    #about-me {
         padding-top: 100px;
     }
 }
