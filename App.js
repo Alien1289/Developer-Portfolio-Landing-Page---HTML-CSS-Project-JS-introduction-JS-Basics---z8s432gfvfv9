@@ -219,7 +219,7 @@ document.addEventListener('scroll', function() {
 
     const overlay = document.getElementById('section-hero-container');
 
-    const fadeEndHeight = 200;
+    const fadeEndHeight = 80;
 
     const maxOpacity = 0.9;
 

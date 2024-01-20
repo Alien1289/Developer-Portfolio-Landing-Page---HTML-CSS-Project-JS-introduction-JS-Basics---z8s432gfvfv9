@@ -181,7 +181,7 @@ nav {
     padding-right: 10%;
     padding-left: 10%;
     display: flex;
-
+    background-color: black;
     justify-content: space-between;
     align-items: center;
 }
@@ -625,7 +625,7 @@ nav {
 
 @media (max-width:990px) {
     #about-me {
-        padding-top: 50px;
+        padding-top: 100px;
         flex-direction: column-reverse;
         height: fit-content;
         gap: 50px;
@@ -654,6 +654,7 @@ nav {
     #about-me-img-container {
         width: 270px;
         height: 270px;
+        margin-top: 80px;
     }
 }
 
@@ -685,7 +686,7 @@ nav {
 
 @media (max-width:400px) {
     .my-projects-items-overlay-txt span {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 }
 
