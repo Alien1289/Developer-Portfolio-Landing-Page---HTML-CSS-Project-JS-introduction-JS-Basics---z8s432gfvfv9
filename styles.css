@@ -565,6 +565,7 @@ nav {
     color: white;
     cursor: pointer;
 }
+
 @media (max-width:1088px) {
     #nav-bar {
         padding-left: 2%;
