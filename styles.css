@@ -164,9 +164,13 @@ nav {
 }
 
 #about-me-info-txt {
-    text-align: justify;
+    /* text-align: justify; */
     margin-bottom: 50px;
     width: fit-content;
+    font-size: medium;
+    font-weight: lighter;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 20px;
 }
 
 #about-me {
@@ -177,6 +181,7 @@ nav {
     padding-right: 10%;
     padding-left: 10%;
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 }
@@ -238,7 +243,7 @@ nav {
     padding-left: 10%;
     padding-right: 10%;
     background-color: white;
-    padding-top: 40px;
+    padding-top: 80px;
     padding-bottom: 40px;
     color: black;
 }
@@ -300,7 +305,7 @@ nav {
     padding-left: 10%;
     padding-right: 10%;
     background-color: black;
-    padding-top: 40px;
+    padding-top: 80px;
     padding-bottom: 100px;
     /* color: black; */
 }
@@ -368,7 +373,7 @@ nav {
 }
 
 #my-projects-items-content span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 2px;
     color: #00FF7F;
 
@@ -680,7 +685,7 @@ nav {
 
 @media (max-width:400px) {
     .my-projects-items-overlay-txt span {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
 

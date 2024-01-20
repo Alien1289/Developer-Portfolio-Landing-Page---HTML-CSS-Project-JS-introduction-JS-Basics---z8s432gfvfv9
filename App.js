@@ -1,3 +1,13 @@
+const viewportHeight = window.innerHeight;
+const viewportWidth = window.innerWidth;
+document.getElementById('section-hero-container').style['min-height'] = `${viewportHeight - 80}px`
+
+document.getElementById('nav-logo-redirect').setAttribute('href', window.location.href)
+document.getElementById('self-direct-anchor').setAttribute('href', window.location.href)
+
+
+
+
 for (let index = 0; index < document.getElementsByClassName('nav-ul-li').length; index++) {
     attachingEventsToDiffElements(document.getElementsByClassName('nav-ul-li')[index], document.getElementsByClassName('nav-ul-li')[index].children[1])
 }
@@ -33,9 +43,6 @@ function attachingEventsToDiffElements(element, elementBorder) {
     }
 }
 
-const viewportHeight = window.innerHeight;
-const viewportWidth = window.innerWidth;
-document.getElementById('section-hero-container').style['min-height'] = `${viewportHeight - 80}px`
 
 
 document.getElementsByClassName('about-me-info-list-item-skills')[0].addEventListener('click', function () {
@@ -230,7 +237,6 @@ document.addEventListener('scroll', function() {
 
 
 
-document.getElementById('nav-logo-redirect').setAttribute('href', window.location.href)
 
 
 
@@ -240,28 +246,22 @@ document.getElementById('nav-logo-redirect').setAttribute('href', window.locatio
 
 
 
+const scriptURL = 'https://script.google.com/macros/s/AKfycby0wOpWkFonZTYmHNlRu5rz-k0G4r8zXfjdj9WA-Q6F18gy3TkXlmsksTONjrM13OiT5g/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById('msg')
 
-
-
-
-
-
-// const scriptURL = 'https://script.google.com/macros/s/AKfycby0wOpWkFonZTYmHNlRu5rz-k0G4r8zXfjdj9WA-Q6F18gy3TkXlmsksTONjrM13OiT5g/exec'
-// const form = document.forms['submit-to-google-sheet']
-// const msg = document.getElementById('msg')
-
-// form.addEventListener('submit', e => {
-//     e.preventDefault()
-//     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-//         .then(response => {
-//             msg.innerHTML = "Message sent successfully"
-//             setTimeout(function () {
-//                 msg.innerHTML = ""
-//             }, 5000)
-//             form.reset()
-//         })
-//         .catch(error => console.error('Error!', error.message))
-// })
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function () {
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+})
 
 
 
