@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Pranavarsh Nukala" />
+    <meta name="contact-email-id" content="pranavarshn2000@gmail.com" />
     <title>PORTFOLIO</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/686/686104.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,7 +15,7 @@
 
 <body>
     <nav id="nav-bar">
-        <span id="nav-logo"><span id="nav-logo-first-letter">P</span>ranavarsh.</span>
+        <span id="nav-logo"><a id="nav-logo-redirect"><span id="nav-logo-first-letter">P</span>ranavarsh.</a></span>
         <ul id="nav-ul">
             <li class="nav-ul-li" id="nav-ul-li-home">
                 <a href="#nav-bar" class="nav-ul-li-anchor">Home</a>
@@ -36,23 +38,42 @@
                 <hr class="nav-ul-li-hr" />
             </li>
         </ul>
+        <div id="nav-hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </nav>
 
+    <section id="hamburger-menu">
 
-    <section id="section-hero">
-        <span id="section-hero-role">Front-End Software Developer</span>
-        <br />
-        <br />
-        <br />
-        <span class="section-hero-txt">Hi, I'm <span id="section-hero-name">Pranavarsh</span></span>
-        <br />
-        <br />
-        <span class="section-hero-txt">Nukala from India</span>
+        <div id="hamburger-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul>
+            <li><a href="#nav-bar" onclick="hamCloser()">Home</a></li>
+            <li><a href="#about-me" onclick="hamCloser()">About</a></li>
+            <li><a href="#my-services" onclick="hamCloser()">Services</a></li>
+            <li><a href="#my-projects" onclick="hamCloser()">Portfolio</a></li>
+            <li><a href="#footer" onclick="hamCloser()">Contact</a></li>
+        </ul>
+    </section>
+
+    <section id="section-hero-container">
+        <section id="section-hero">
+            <span id="section-hero-role">Front-End Software Developer</span>
+            <br />
+            <br />
+            <br />
+            <span class="section-hero-txt">Hi, I'm <span id="section-hero-name">Pranavarsh</span> Nukala from India</span>
+        </section>
     </section>
 
     <div id="person-img-container">
         <img id="person-img" src="./portfolio.png" />
     </div>
+
+
+
 
     <section id="about-me">
 
@@ -68,6 +89,8 @@
                 <li class="about-me-info-list-item about-me-info-list-item-experience">Experience</li>
                 <li class="about-me-info-list-item about-me-info-list-item-education">Education</li>
             </ul>
+            <hr/>
+            <br/>
             <div id="about-me-info-dynamic-content">
                 <span>Computer Languages:</span>
                 <ul>
@@ -144,40 +167,47 @@
         <h2 id="my-projects-heading">My Projects</h2>
         <br />
         <div id="my-projects-grid">
-            <div class="my-projects-items">
-                <img width='350px' height='450px'
-                    src="data:image/png;base64,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" />
+            <div class="my-projects-items" >
+                <img src="./dictionary_project.png"/>
+                <div id="my-projects-items-content">
+                    <span>DICTIONARY APP</span>
+                    <p>Explore a world of words! Enhance your vocabulary with my user-friendly dictionary</p>
+                </div>
                 <div class="my-projects-items-overlay-txt">
-                    <span>NETFLIX CLONE</span>
+                    <span>DICTIONARY APP</span>
                     <br/>
-                    <br />
-                    <p>Enjoy a seamless streaming experience with my meticulously crafted Netflix Clone.</p>
                     <br/>
-                    <span>Live Demo ></span>
+                    <a href="https://github.com/Alien1289/My-Dictionary---Javascript-Project---28qkrmk92ncl" target="_blank"><button>View Code</button></a>
+                    <a href="https://comfy-parfait-f32756.netlify.app/" target="_blank"><button>Live Demo</button></a>
+                </div>
+            </div>
+            <div class="my-projects-items">
+                <img src= "./portfolio_project.png" />
+                <div id="my-projects-items-content">
+                    <span>DICTIONARY APP</span>
+                    <p>Explore a world of words! Enhance your vocabulary with our user-friendly dictionary</p>
+                </div>
+                <div class="my-projects-items-overlay-txt">
+                    <span>PORTFOLIO WEBSITE</span>
+                    <br/>
+                    <br/>
+                    <a href="https://github.com/Alien1289/My-Dictionary---Javascript-Project---28qkrmk92ncl" target="_blank"><button>View Code</button></a>
+                    <a href="https://comfy-parfait-f32756.netlify.app/" target="_blank"><button>Live Demo</button></a>
                 </div>
 
             </div>
-            <div class="my-projects-items">
-                <img width='350px' height='450px'
-                    src="https://w0.peakpx.com/wallpaper/711/59/HD-wallpaper-tic-tac-toe-game-background-ultra-games-other-games-game-design-background-tictactoe-chalkboard-chalk-diagonal-row-winner-grid-greenish-turquoise.jpg" />
-                <div class="my-projects-items-overlay-txt">
-                    <span>TIC TAC TOE GAME</span>
-                    <br />
-                    <br/>
-                    <p>Challenge your strategic skills in this timeless classic, reimagined for endless fun.</p>
-                    <span>Live Demo ></span>
+            <div class="my-projects-items" >
+                <img src="./spotify_project.png"/>
+                <div id="my-projects-items-content">
+                    <span>SPOTIFY LANDING PAGE</span>
+                    <p>See my HTML/CSS skills in action with a Spotify page clone!</p>
                 </div>
-
-            </div>
-            <div class="my-projects-items">
-                <img width='350px' height='450px'
-                    src="https://s3-alpha.figma.com/hub/file/3863763275/43bb9a44-3863-4ff2-ad24-a2de0a50d129-cover.png" />
                 <div class="my-projects-items-overlay-txt">
-                    <span>WEATHER APP</span>
-                    <br />
+                    <span>SPOTIFY LANDING PAGE</span>
                     <br/>
-                    <p>Stay informed with real-time weather updates and intuitive visualizations on my user-friendly Weather App.</p>
-                    <span>Live Demo ></span>
+                    <br/>
+                    <a href="https://github.com/Alien1289/Spotify_landing_page" target="_blank"><button>View Code</button></a>
+                    <a href="https://heartfelt-fudge-f2307e.netlify.app/" target="_blank"><button>Live Demo</button></a>
                 </div>
 
             </div>
@@ -194,24 +224,30 @@
             <li><i class="fa-solid fa-phone-volume"></i> +91 7226828516</li>
             <li>
                 <ul id="footer-ul-icons">
-                    <li><a href="https://www.linkedin.com/in/pranavarsh-nukala-40361b177/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-                    <li><a href="https://github.com/Alien1289" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/pranavarsh-nukala-40361b177/" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/Alien1289" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </li>
                 </ul>
             </li>
-            <li><button id="footer-cv-download">Download CV</button></li>
+            <li><button id="footer-cv-download" class="ftr-btns">Download CV</button></li>
         </ul>
-        <div>
-        </div>
+        <!-- <div>
+        </div> -->
         <form id="footer-form" name="submit-to-google-sheet">
-            <input id="footer-form-name" name="Name" placeholder="Your Name" required />
+            <input id="footer-form-name" name="Name" type="text" placeholder="Your Name" required />
             <br />
-            <input id="footer-form-mail" name="Email" placeholder="Your Email" required/>
+            <input id="footer-form-mail" name="Email" type="email" placeholder="Your Email" required />
             <br />
             <textarea id="footer-form-comment" name="Message" placeholder="Your Message" required></textarea>
-            <button id="footer-form-submit">Submit</button>
+            <button id="footer-form-submit" class="ftr-btns">Submit</button>
             <span id="msg"></span>
         </form>
     </footer>
+
+    <section>
+
+    </section>
     <script src="./App.js"></script>
 </body>
 
