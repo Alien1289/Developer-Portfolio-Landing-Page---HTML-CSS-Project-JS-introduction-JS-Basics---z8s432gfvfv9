@@ -284,6 +284,7 @@ nav {
     font-size: 3rem;
     padding: 10px 10px;
     border-radius: 10px;
+    white-space: nowrap;
 }
 
 /* my projects section */
@@ -297,6 +298,7 @@ nav {
     padding: 10px 10px;
     border-radius: 10px;
     box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
 }
 
 #my-projects {
@@ -658,7 +660,7 @@ nav {
     }
 }
 
-@media (max-width:380px) {
+@media (max-width:400px) {
 
     #my-services-heading,
     #my-projects-heading {
