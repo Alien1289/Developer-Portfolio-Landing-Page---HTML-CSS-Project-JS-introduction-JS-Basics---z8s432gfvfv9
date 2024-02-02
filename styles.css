@@ -24,7 +24,6 @@ body {
     color: black;
 }
 
-
 #nav-logo a {
     text-decoration: none;
     color: white;
@@ -120,34 +119,44 @@ nav {
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 80px;
-    animation-name: heroContentSlider;
-    animation-duration: 2s;
+    /* background-color: blue; */
 }
 
 #section-hero {
-    width: fit-content;
+    width: 650px;
     height: fit-content;
     background-color: black;
     padding: 81px 70px;
     box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
     border-radius: 28px;
-}
-
-#section-hero-role {
-    font-size: 1.5rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    letter-spacing: 3px;
-    font-weight: 400;
+    /* background-color: violet; */
+    animation-name: heroContentSlider;
+    animation-duration: 2s;
 }
 
 .section-hero-txt {
     font-size: 3rem;
+    /* background-color: red; */
 }
 
 #section-hero-name {
+    /* display: none; */
+    width: fit-content;
+    min-height: 3rem;
+    /* padding: 5px 10px; */
+    position: relative;
+    font-size: 3rem;
+    white-space: nowrap;
     color: #00FF7F;
+    border-right: 2px solid #00FF7F;
+    /* background-color: yellow; */
+    animation-name: borderAnimation;
+    animation-duration: 0.2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
-
 
 /* background image */
 #person-img-container {
@@ -170,14 +179,6 @@ nav {
     height: 100%;
 }
 
-
-/* person-image-opaque dealer */
-#person-img-container-opaque {
-    width: 100%;
-    height: 200px;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 0;
-}
 
 /* about me */
 #about-me-info-title {
@@ -351,10 +352,6 @@ nav {
     top: 0;
 }
 
-/* .my-projects-items:hover{
-    position: relative;
-    bottom: 5px;
-} */
 
 .my-projects-items img {
     /* display: none; */
@@ -630,18 +627,40 @@ nav {
 @media (max-width: 700px) {
     #section-hero {
         padding: 81px 50px;
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    #section-hero-role {
-        font-size: 1rem;
-    }
 
-    .section-hero-txt {
+    .section-hero-txt, #section-hero-name {
+
         font-size: 2rem;
+
     }
 
 }
+@media (max-width: 443px){
+    .section-hero-txt, #section-hero-name {
+        font-size: 1.5rem;
+        line-height: 40px;
+    }
+    #section-hero{
+        width: 270px;
+        padding-left: 5%;
+    }
+}
 
+@media (max-width:305px){
+    .section-hero-txt, #section-hero-name {
+        font-size: 1rem;
+        line-height: 40px;
+    }
+    #section-hero{
+        width: 200px;
+        padding-left: 5%;
+    }
+}
 @media (max-width:1188px) {
     #about-me {
         padding-left: 5%;
@@ -710,9 +729,9 @@ nav {
     }
 }
 
-@media (min-width:1032px) {
+@media (min-width:1362px) {
     #section-hero {
-        margin-left: 408px;
+        margin-left: 230px;
         
     }
 
@@ -771,5 +790,14 @@ nav {
     100%{
         left: 100%;
         width: 0%;
+    }
+}
+
+@keyframes borderAnimation {
+    0%{
+        border-right: 2px solid #00FF7F;
+    }
+    100%{
+        border-right: 2px solid black;
     }
 }

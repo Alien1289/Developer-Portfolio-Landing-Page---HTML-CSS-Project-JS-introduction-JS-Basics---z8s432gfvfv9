@@ -6,45 +6,6 @@ document.getElementById('nav-logo-redirect').setAttribute('href', window.locatio
 document.getElementById('self-direct-anchor').setAttribute('href', window.location.href)
 
 
-
-
-// for (let index = 0; index < document.getElementsByClassName('nav-ul-li').length; index++) {
-//     attachingEventsToDiffElements(document.getElementsByClassName('nav-ul-li')[index], document.getElementsByClassName('nav-ul-li')[index].children[1])
-// }
-
-// function attachingEventsToDiffElements(element, elementBorder) {
-//     let borderBottomHr = -1;
-//     let borderBottomHrWidthIncreaseInterval;
-//     let borderBottomHrWidthDecreaseInterval;
-//     element.addEventListener('mouseenter', function () {
-//         if (borderBottomHr === -1) {
-//             borderBottomHr = 0
-//             borderBottomHrWidthIncreaseInterval = setInterval(function () {
-//                 elementBorder.style['width'] = `${borderBottomHr}%`
-//                 if (borderBottomHr === 100) {
-//                     decrease()
-//                     clearInterval(borderBottomHrWidthIncreaseInterval)
-//                 } else {
-//                     borderBottomHr += 25;
-//                 }
-//             }, 40)
-//         }
-//     })
-//     function decrease() {
-//         borderBottomHrWidthDecreaseInterval = setInterval(function () {
-//             elementBorder.style['width'] = `${borderBottomHr}%`
-//             if (borderBottomHr === 0) {
-//                 clearInterval(borderBottomHrWidthDecreaseInterval);
-//                 borderBottomHr = -1
-//             } else {
-//                 borderBottomHr -= 25;
-//             }
-//         }, 40)
-//     }
-// }
-
-
-
 document.getElementsByClassName('about-me-info-list-item-skills')[0].addEventListener('click', function () {
     document.getElementsByClassName('about-me-info-list-item-skills')[0].classList.add('about-me-info-list-item-active')
     document.getElementsByClassName('about-me-info-list-item-experience')[0].classList.remove('about-me-info-list-item-active')
@@ -214,38 +175,67 @@ function hamCloser() {
 
 
 
-document.addEventListener('scroll', function () {
-    const scrollTop = window.scrollY;
-
-    const overlay = document.getElementById('section-hero-container');
-
-    const fadeEndHeight = 80;
-
-    const maxOpacity = 0.9;
-
-    const opacity = Math.min(scrollTop / fadeEndHeight, maxOpacity);
-
-    if (scrollTop > fadeEndHeight) {
-        overlay.style.transition = 'background-color 0.3s ease';
-        overlay.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-    } else {
-        overlay.style.transition = 'background-color 0.3s ease';
-        overlay.style.backgroundColor = 'transparent';
-    }
-});
-
-
 
 
 function reloader() {
     document.getElementById('reloader'), setAttribute('href', window.viewportWidth)
 }
 
-
-
-
-
-
-
+let nameLength = document.getElementById('section-hero-name').textContent
+let nameInterval;
+let roleInterval;
+let counter = 0;
+let counter1 = 0
+function req(){
+    nameInterval = setInterval(function () {
+        let nameString = 'Frontend Developer'
+        let defaultString = 'Pranavarsh Nukala'
+        document.getElementById('section-hero-name').textContent = document.getElementById('section-hero-name').textContent.slice(0, -1)
+        if (document.getElementById('section-hero-name').textContent == "") {
+            clearInterval(nameInterval)
+            setTimeout(function(){
+                req1()
+            }, 500)
+            nameLength = document.getElementById('section-hero-name').textContent
+            function req1(){
+                nameInterval = setInterval(function () {
+                    if (nameLength.length < nameString.length && counter === 0) {
+                        
+                        document.getElementById('section-hero-name').textContent += nameString.charAt(document.getElementById('section-hero-name').textContent.length)
+                        nameLength = document.getElementById('section-hero-name').textContent
+                        if (nameLength.length === 18){
+                            counter = 1
+                        }
+                
+                    }else {
+                        if(counter1 === 0){
+                            document.getElementById('section-hero-name').textContent = document.getElementById('section-hero-name').textContent.slice(0, -1)
+                             if (document.getElementById('section-hero-name').textContent == "") {
+                            counter1 = 1
+                             }
+                        }else if (counter1  = 1) {
+                            nameLength = document.getElementById('section-hero-name').textContent
+                            if (nameLength.length < defaultString.length) {
+                                document.getElementById('section-hero-name').textContent += defaultString.charAt(document.getElementById('section-hero-name').textContent.length)
+                            }
+                            if(nameLength.length === 17){
+                                clearInterval(nameInterval)
+                                counter = 0
+                                counter1 = 0
+                                setTimeout(function(){
+                                    req()
+                                }, 500)
+                            }
+                        }
+                    }
+                }, 200)
+            }
+            
+        }
+    }, 200)
+}
+setTimeout(function(){
+    req()
+}, 4000)
 
 
