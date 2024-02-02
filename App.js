@@ -8,40 +8,40 @@ document.getElementById('self-direct-anchor').setAttribute('href', window.locati
 
 
 
-for (let index = 0; index < document.getElementsByClassName('nav-ul-li').length; index++) {
-    attachingEventsToDiffElements(document.getElementsByClassName('nav-ul-li')[index], document.getElementsByClassName('nav-ul-li')[index].children[1])
-}
+// for (let index = 0; index < document.getElementsByClassName('nav-ul-li').length; index++) {
+//     attachingEventsToDiffElements(document.getElementsByClassName('nav-ul-li')[index], document.getElementsByClassName('nav-ul-li')[index].children[1])
+// }
 
-function attachingEventsToDiffElements(element, elementBorder) {
-    let borderBottomHr = -1;
-    let borderBottomHrWidthIncreaseInterval;
-    let borderBottomHrWidthDecreaseInterval;
-    element.addEventListener('mouseenter', function () {
-        if (borderBottomHr === -1) {
-            borderBottomHr = 0
-            borderBottomHrWidthIncreaseInterval = setInterval(function () {
-                elementBorder.style['width'] = `${borderBottomHr}%`
-                if (borderBottomHr === 100) {
-                    decrease()
-                    clearInterval(borderBottomHrWidthIncreaseInterval)
-                } else {
-                    borderBottomHr += 25;
-                }
-            }, 40)
-        }
-    })
-    function decrease() {
-        borderBottomHrWidthDecreaseInterval = setInterval(function () {
-            elementBorder.style['width'] = `${borderBottomHr}%`
-            if (borderBottomHr === 0) {
-                clearInterval(borderBottomHrWidthDecreaseInterval);
-                borderBottomHr = -1
-            } else {
-                borderBottomHr -= 25;
-            }
-        }, 40)
-    }
-}
+// function attachingEventsToDiffElements(element, elementBorder) {
+//     let borderBottomHr = -1;
+//     let borderBottomHrWidthIncreaseInterval;
+//     let borderBottomHrWidthDecreaseInterval;
+//     element.addEventListener('mouseenter', function () {
+//         if (borderBottomHr === -1) {
+//             borderBottomHr = 0
+//             borderBottomHrWidthIncreaseInterval = setInterval(function () {
+//                 elementBorder.style['width'] = `${borderBottomHr}%`
+//                 if (borderBottomHr === 100) {
+//                     decrease()
+//                     clearInterval(borderBottomHrWidthIncreaseInterval)
+//                 } else {
+//                     borderBottomHr += 25;
+//                 }
+//             }, 40)
+//         }
+//     })
+//     function decrease() {
+//         borderBottomHrWidthDecreaseInterval = setInterval(function () {
+//             elementBorder.style['width'] = `${borderBottomHr}%`
+//             if (borderBottomHr === 0) {
+//                 clearInterval(borderBottomHrWidthDecreaseInterval);
+//                 borderBottomHr = -1
+//             } else {
+//                 borderBottomHr -= 25;
+//             }
+//         }, 40)
+//     }
+// }
 
 
 
